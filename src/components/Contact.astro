@@ -1,0 +1,139 @@
+---
+// src/components/Contact.astro
+---
+
+<section id="contact" class="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Vamos Conversar! 💬</h2>
+    
+    <div class="contact-content">
+      <p class="contact-description">
+        Estou aberto a novas oportunidades e projetos interessantes. 
+        Sinta-se livre para entrar em contato comigo através de qualquer um dos canais abaixo.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:seu.email@exemplo.com" class="contact-link">
+          <span class="icon">📧</span>
+          Email
+        </a>
+        <a href="https://linkedin.com/in/seu-linkedin" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="icon">💼</span>
+          LinkedIn
+        </a>
+        <a href="https://github.com/seu-github" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="icon">🐙</span>
+          GitHub
+        </a>
+        <a href="https://twitter.com/seu-twitter" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="icon">🐦</span>
+          Twitter
+        </a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    transition: background-color 0.3s ease;
+  }
+
+  body.dark .contact {
+    background-color: #0f0f0f;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+
+  body.dark .contact-title {
+    color: #fff;
+  }
+
+  .contact-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body.dark .contact-description {
+    color: #bbb;
+  }
+
+  .contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    color: #000;
+  }
+
+  body.dark .contact-link {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+  .contact-link:hover {
+    background-color: #0066cc;
+    color: white;
+    transform: translateY(-4px);
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .footer {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 2rem;
+    color: #999;
+  }
+
+  body.dark .footer {
+    border-top-color: #333;
+    color: #666;
+  }
+
+  @media (max-width: 768px) {
+    .contact {
+      padding: 2rem 1rem;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+    }
+
+    .contact-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

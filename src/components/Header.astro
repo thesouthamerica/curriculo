@@ -1,0 +1,88 @@
+---
+// src/components/Header.astro
+---
+
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo">
+      <h1>Portfolio</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Início</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+  }
+
+  body.dark .header {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0066cc;
+  }
+
+  body.dark .logo h1 {
+    color: #66b3ff;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  body.dark .nav-links a {
+    color: #bbb;
+  }
+
+  .nav-links a:hover {
+    color: #0066cc;
+  }
+
+  body.dark .nav-links a:hover {
+    color: #66b3ff;
+  }
+
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

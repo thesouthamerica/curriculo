@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Contact from '../components/Contact.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+---
+
+<Layout title="Portfólio Profissional | Desenvolvedor Web">
+  <ThemeToggle />
+  <Header />
+  <Hero />
+  <About />
+  
+  <section id="projects" class="projects-section">
+    <div class="projects-container">
+      <h2>Meus Projetos</h2>
+      <div class="projects-grid">
+        <ProjectCard 
+          title="Plataforma E-commerce" 
+          description="Loja online completa com carrinho de compras, sistema de pagamento integrado e painel administrativo."
+          tags={['React', 'Node.js', 'Stripe', 'MongoDB']}
+          link="https://exemplo.com/ecommerce"
+          github="https://github.com/usuario/ecommerce"
+        />
+        <ProjectCard 
+          title="Dashboard Analítico" 
+          description="Painel interativo para visualização de dados em tempo real com gráficos dinâmicos e filtros avançados."
+          tags={['Vue.js', 'Chart.js', 'API REST', 'Tailwind']}
+          link="https://exemplo.com/dashboard"
+          github="https://github.com/usuario/dashboard"
+        />
+        <ProjectCard 
+          title="App de Tarefas PWA" 
+          description="Aplicação web progressiva para gerenciamento de tarefas com sincronização offline e notificações."
+          tags={['Astro', 'TypeScript', 'PWA', 'IndexedDB']}
+          link="https://exemplo.com/tasks"
+          github="https://github.com/usuario/tasks-app"
+        />
+        <ProjectCard 
+          title="Gerador de QR Code" 
+          description="Ferramenta online para gerar e personalizar códigos QR com download em múltiplos formatos."
+          tags={['JavaScript', 'QR Code Lib', 'Canvas']}
+          link="https://exemplo.com/qrcode"
+          github="https://github.com/usuario/qrcode-gen"
+        />
+        <ProjectCard 
+          title="API RESTful" 
+          description="Servidor backend bem documentado com autenticação JWT, validação de dados e testes automatizados."
+          tags={['Node.js', 'Express', 'PostgreSQL', 'JWT']}
+          link="https://api.exemplo.com"
+          github="https://github.com/usuario/api-rest"
+        />
+        <ProjectCard 
+          title="Blog de Tecnologia" 
+          description="Blog moderno com sistema de categorias, busca e comentários. Otimizado para SEO."
+          tags={['Astro', 'Markdown', 'Tailwind', 'Web Analytics']}
+          link="https://blog.exemplo.com"
+          github="https://github.com/usuario/blog"
+        />
+      </div>
+    </div>
+  </section>
+
+  <Contact />
+</Layout>
+
+<style>
+  .projects-section {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    transition: background-color 0.3s ease;
+  }
+
+  body.dark .projects-section {
+    background-color: #1a1a1a;
+  }
+
+  .projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #000;
+  }
+
+  body.dark .projects-section h2 {
+    color: #fff;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .projects-section {
+      padding: 2rem 1rem;
+    }
+
+    .projects-section h2 {
+      font-size: 2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

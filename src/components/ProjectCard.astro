@@ -1,0 +1,155 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  github?: string;
+}
+
+const { title, description, tags, link, github } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="card-content">
+    <h3 class="card-title">{title}</h3>
+    <p class="card-description">{description}</p>
+    
+    <div class="card-tags">
+      {tags.map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+
+    <div class="card-links">
+      {link && (
+        <a href={link} target="_blank" rel="noopener noreferrer" class="link-btn">
+          Ver Demo →
+        </a>
+      )}
+      {github && (
+        <a href={github} target="_blank" rel="noopener noreferrer" class="link-btn github">
+          GitHub 🔗
+        </a>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.dark .project-card {
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  body.dark .project-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000;
+  }
+
+  body.dark .card-title {
+    color: #fff;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  body.dark .card-description {
+    color: #bbb;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    background-color: #e8f0ff;
+    color: #0066cc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  body.dark .tag {
+    background-color: #0066cc;
+    color: #e8f0ff;
+  }
+
+  .card-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .link-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+  }
+
+  .link-btn:hover {
+    background-color: #0052a3;
+  }
+
+  .link-btn.github {
+    background-color: transparent;
+    color: #0066cc;
+    border: 1px solid #0066cc;
+  }
+
+  .link-btn.github:hover {
+    background-color: #0066cc;
+    color: white;
+  }
+
+  body.dark .link-btn.github {
+    color: #66b3ff;
+    border-color: #66b3ff;
+  }
+
+  body.dark .link-btn.github:hover {
+    background-color: #0066cc;
+    color: white;
+  }
+</style>

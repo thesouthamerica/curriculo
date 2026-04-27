@@ -1,0 +1,171 @@
+---
+// src/components/Hero.astro
+---
+
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Olá! 👋</h1>
+    <p class="hero-subtitle">
+      Sou um desenvolvedor web apaixonado por criar soluções digitais inovadoras.
+    </p>
+    <p class="hero-description">
+      Com experiência em front-end e back-end, estou pronto para transformar suas ideias em realidade.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">Ver Meus Projetos</a>
+      <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="avatar">👨‍💻</div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 70vh;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
+  }
+
+  body.dark .hero-title {
+    color: #fff;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #0066cc;
+    font-weight: 600;
+  }
+
+  body.dark .hero-subtitle {
+    color: #66b3ff;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  body.dark .hero-description {
+    color: #ccc;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: #0066cc;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #0052a3;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #0066cc;
+    border: 2px solid #0066cc;
+  }
+
+  .btn-secondary:hover {
+    background-color: #0066cc;
+    color: white;
+  }
+
+  body.dark .btn-primary {
+    background-color: #0066cc;
+  }
+
+  body.dark .btn-primary:hover {
+    background-color: #0052a3;
+  }
+
+  body.dark .btn-secondary {
+    color: #66b3ff;
+    border-color: #66b3ff;
+  }
+
+  body.dark .btn-secondary:hover {
+    background-color: #0066cc;
+    color: white;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar {
+    font-size: 10rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding: 3rem 1rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .avatar {
+      font-size: 8rem;
+    }
+  }
+</style>
