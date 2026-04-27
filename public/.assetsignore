@@ -1,0 +1,59 @@
+# Arquivos e pastas a serem ignorados durante o deploy no Cloudflare Pages
+# Este arquivo ajuda a otimizar o deploy excluindo arquivos desnecessários
+
+# Dependências
+node_modules/
+
+# Arquivos de configuração do projeto
+.env
+.env.local
+.env.*.local
+
+# Arquivos de desenvolvimento
+.git/
+.gitignore
+README.md
+QUICK-START.md
+
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Cache e builds temporários
+.cache/
+.tmp/
+dist/
+build/
+
+# Arquivos de IDE
+.vscode/
+.idea/
+
+# Arquivos de teste
+test/
+tests/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Documentação adicional
+docs/
+*.md
+!README.md
+
+# Arquivos de backup
+*.bak
+*.backup
+*~
+
+# Arquivos de configuração específicos
+.eslintrc*
+.prettierrc*
+.stylelintrc*
