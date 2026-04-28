@@ -6,7 +6,7 @@
   <div class="hero-content">
     <h1 class="hero-title">Olá! 👋</h1>
     <p class="hero-subtitle">
-      Sou um desenvolvedor web apaixonado por criar soluções digitais inovadoras.
+      Me chamo Leonardo Bezerra, desenvolvedo full-stack.
     </p>
     <p class="hero-description">
       Com experiência em front-end e back-end, estou pronto para transformar suas ideias em realidade.
@@ -17,8 +17,10 @@
     </div>
   </div>
   <div class="hero-image">
-    <div class="avatar">👨‍💻</div>
+  <div class="avatar">
+    <img src="/minha%20foto.png" alt="Minha Foto" />
   </div>
+</div>
 </section>
 
 <style>
@@ -37,6 +39,12 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-title {
@@ -125,15 +133,20 @@
     color: white;
   }
 
-  .hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .avatar img {
+    width: 100%;       /* Faz a imagem ocupar o espaço da div */
+    height: 100%;      /* Mantém a proporção */
+    object-fit: cover; /* Garante que o rosto não fique "esticado" */
+    border-radius: 50%; /* Se quiser a foto redonda como um avatar */
   }
 
   .avatar {
-    font-size: 10rem;
-    animation: float 3s ease-in-out infinite;
+    width: 200px;      /* Ajuste o tamanho conforme desejar */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;  /* Garante que a imagem não saia da borda redonda */
   }
 
   @keyframes float {
