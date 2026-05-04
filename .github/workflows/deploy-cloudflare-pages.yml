@@ -13,6 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Check Hero contains Leonardo
+        run: grep -q "Leonardo" src/components/Hero.astro || (echo "Error: Hero.astro does not contain 'Leonardo'" && exit 1)
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
