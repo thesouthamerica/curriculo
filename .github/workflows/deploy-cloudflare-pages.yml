@@ -13,8 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Test check UNINASSAU in Index.astro
-        run: grep -q "UNINASSAU" src/pages/Index.astro && echo "ok" || (echo "UNINASSAU not found in Index.astro" && exit 1)
+      - name: Test check UNINASSAU in header.astro
+        run: grep -q "UNINASSAU" src/components/Header.astro && echo "ok" || (echo "UNINASSAU not found in Header.astro" && exit 1)
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
